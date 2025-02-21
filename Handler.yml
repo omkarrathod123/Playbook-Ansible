@@ -1,0 +1,17 @@
+---
+- name: Handler Example
+  hosts: all
+  gather_facts: true
+  tasks:
+  - name: Install nginx applitions
+    apt:
+      name: nginx
+      state: latest
+    become: true
+    notify: restart_nginx
+  handlers:
+  - name: restart_nginx
+    become: true
+    service:
+      name: nginx
+      state: started
