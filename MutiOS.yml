@@ -1,0 +1,18 @@
+---
+  - hosts: all
+    become: yes
+
+    tasks:
+      - name: install nginx
+        apt:
+          name: nginx
+          state: latest
+          when: ansible_os_family == "Debian"
+        yum:
+          name: net-tools
+          state: present
+          when: ansible_os_family == "Redhat"
+        apt:
+          name: docker.io
+          state: present
+          when: ansible_os_family == "Debian"
