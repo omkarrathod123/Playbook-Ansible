@@ -1,2 +1,2 @@
 # Playbook-Ansible
-Thios Repository is have sample playbooks 
+Thios Repository is have sample playbooks

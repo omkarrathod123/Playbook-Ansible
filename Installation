@@ -1,0 +1,11 @@
+Installation on Ubuntu Server:-
+
+sudo apt remove ansible
+sudo apt --purge autoremove
+sudo apt update
+sudo apt upgrade
+sudo apt -y install software-properties-common
+sudo apt-add-repository ppa:ansible/ansible
+sudo apt install ansible
+
+note:- Python 3 is required for ansible.
