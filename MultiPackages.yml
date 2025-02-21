@@ -10,3 +10,6 @@
         apt:
           name: net-tools
           state: present
+        apt:
+          name: docker.io
+          state: present
