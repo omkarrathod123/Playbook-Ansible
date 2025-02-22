@@ -7,9 +7,12 @@
         apt:
           name: nginx
           state: latest
-        apt:
+          when: ansible_os_family == "Debian"
+        yum:
           name: net-tools
           state: present
+          when: ansible_os_family == "Redhat"
         apt:
           name: docker.io
           state: present
+          when: ansible_os_family == "Debian"
