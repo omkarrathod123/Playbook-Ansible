@@ -1,5 +1,0 @@
-- name: Install nginx applitions
-    apt:
-      name: nginx
-      state: latest
-    become: true

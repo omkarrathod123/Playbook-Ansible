@@ -1,0 +1,16 @@
+---
+- hosts: all
+  become: true
+  pre_tasks:
+    roles:
+      - base
+
+- hosts: webserver
+  become: true
+  roles:
+    - web_server
+
+- hosts: IoCServer
+  become: true
+  roles:
+    - ioc_server
