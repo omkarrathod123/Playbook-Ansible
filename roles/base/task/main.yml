@@ -1,0 +1,5 @@
+- name: update Repository index
+  apt:
+    update_cache: yes
+  change_when: false
+  when: ansible_distribution == "Ubuntu"

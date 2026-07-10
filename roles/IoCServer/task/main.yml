@@ -1,0 +1,5 @@
+- name: Install terraform applitions
+    apt:
+      name: terraform
+      state: latest
+    become: true

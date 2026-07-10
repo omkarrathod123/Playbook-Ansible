@@ -19,6 +19,7 @@ Role is the primary mechanism for braking a playbook into multiple files.Roles a
 - **Vars:**  Variables for the role can be specified in this directory and used in your configuration files both wars and Default stores variables.
 
 ## Installation on Ubuntu Server
+note:- Python 3 is required for ansible.
 1. Get and install update
 ```sh
 sudo apt --purge autoremove
@@ -37,5 +38,4 @@ sudo apt-add-repository ppa:ansible/ansible
 ```sh
 sudo apt install ansible
 ```
-note:- Python 3 is required for ansible.
 ---
