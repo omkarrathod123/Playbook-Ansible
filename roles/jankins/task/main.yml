@@ -1,0 +1,32 @@
+---
+- name: Add Jenkins repository
+  template:
+    src: jenkins.repo.j2
+    dest: /etc/yum.repos.d/jenkins.repo
+  when: ansible_os_family == "RedHat"
+
+- name: Import Jenkins key
+  rpm_key:
+    state: present
+    key: https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+  when: ansible_os_family == "RedHat"
+
+- name: Install Jenkins (RedHat)
+  yum:
+    name: jenkins
+    state: present
+  when: ansible_os_family == "RedHat"
+
+- name: Install Jenkins (Debian)
+  apt:
+    name: jenkins
+    state: present
+    update_cache: yes
+  when: ansible_os_family == "Debian"
+
+- name: Ensure Jenkins service is enabled and started
+  service:
+    name: jenkins
+    state: started
+    enabled: yes
+  notify: Restart Jenkins
