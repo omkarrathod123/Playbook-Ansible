@@ -19,3 +19,8 @@
   become: true
   roles:
     - jenkins
+
+- hosts: docker_server
+  become: true
+  roles:
+    - docker
